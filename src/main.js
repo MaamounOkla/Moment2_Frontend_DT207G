@@ -44,13 +44,13 @@ async function getData() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.table(data); // Skriver ut data till konsolen
+
   } catch (error) {
     console.error('Fel vid hämtning av data:', error); // Skriv ut felmeddelande om något går fel
   }
 }
 
-// Funktion för att skapa en ny upplevelse och skicka den till API:et
+// Funktion för att skapa ett jobb
 async function createExperience(companyname, jobtitle, location, startdate, enddate, description) {
   try {
     // Skapa ett objekt med experiences
@@ -62,9 +62,7 @@ async function createExperience(companyname, jobtitle, location, startdate, endd
       enddate: enddate,
       description: description
     };
-
-    console.log(experienceObj);
-
+ 
     // Skicka till API:et 
     const response = await fetch(url, {
       method: "POST",
@@ -74,8 +72,6 @@ async function createExperience(companyname, jobtitle, location, startdate, endd
       body: JSON.stringify(experienceObj)
     });
 
-    const data = await response.json();
-    console.log(data);
   } catch (error) {
     console.error('Fel i experienceObj:', error);
   }
@@ -106,7 +102,7 @@ async function showAllJobs() {
         <p><strong>Beskrivning:</strong> ${job.description}</p>
         
       `;
-    //Skapa delete och update knappar. 
+    //Skapa delete knappen
     const buttonsDiv = document.createElement("div");
     const deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
@@ -117,7 +113,7 @@ async function showAllJobs() {
     // Radera erfarenhet
     deleteBtn.addEventListener("click", async (e) => {
       e.preventDefault();
-
+      
       //Skapa id
       const id = parseInt(deleteBtn.getAttribute("data-index"));
       console.log(id);
@@ -137,18 +133,22 @@ async function showAllJobs() {
 
         console.log('Resource deleted successfully');
 
+        //Ta bort den närmaste artikel elementet dynamiskt (då vanlig delete kräver att man laddar om sidan.)
+        const article = deleteBtn.closest("article");
+        jobsListDiv.removeChild(article);
+     
       } catch (error) {
         console.error('Error deleting resource:', error);
       }
-
+    
     });
-
+    
     buttonsDiv.appendChild(deleteBtn);
     article.appendChild(buttonsDiv);
     // Lägg till artikel-elementet i listan för jobb
     jobsListDiv.appendChild(article);
+ 
   })
-
-
 }
 
+ 

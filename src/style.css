@@ -96,7 +96,7 @@
     width: 10rem;
     padding: 1rem;
     background: #ffde08;
-  
+    margin: 1rem 0;
     border: none;
     border-radius: 5px;
     color: #000;
@@ -104,6 +104,7 @@
     cursor: pointer;
   }
   .main-form input[type="submit"]:hover {
+   
     background-color: #ffe641;
     box-shadow: 0 0 10px rgba(118, 133, 247, 0.489);
   }

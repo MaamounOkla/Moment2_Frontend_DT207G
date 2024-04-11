@@ -26,7 +26,7 @@
     </nav>
     <main>
 
-        <h1>Beskrivningen av lösningen</h1>
+        <h1>Beskrivning av lösningen</h1>
         <hr>
         <section class="report">
             <br><br>
@@ -42,10 +42,77 @@
                 </div>
             </div>
             </div>
-            <hr> 
+            <hr>
             <div class="section1">
-             
-           
+                <br><br>
+                <h2>1. Syfte</h2>
+                <p>En webbapplikation för att lagra arbetslivserfaerenheter som består av två mindre projekt, ett för en
+                    frontend-webbplats (den här webbplatsen) och det andra för ett API (den REST-baserade webbtjänsten)
+                    som är kopplat till en relationsbaserad databasserver (MySQL) för lagring. Webbplatsen konsumerar
+                    webbtjänsten med hjälp av Fetch API och med det så kallade CRUD (Create, Read, Update och Delete)
+                    för att hantera data i databasen. Syftet är alltså att förstå hur moderna plattformsberoende
+                    applikationer fungerar och kunna implementera detta i nästkommande projekt.
+                </p>
+
+                <br><br>
+                <h2>2. Konstruktion och utvecklingsmiljö</h2>
+                <p>
+                    Teknik som användes för att bygga webbapplikationen:
+                    <br>
+                    &nbsp; <li>Visual Studio Code eller ett annat IDE.</li>
+                    &nbsp; <li>Webbläsare, till exempel Chrome eller FireFox.</li>
+                    &nbsp; <li>NodeJS</li>
+                    &nbsp; <li>Xampp</li>
+                    <br>
+                    Paketen som användes i <strong>backend</strong> för att bygga API:et för denna webbapplikation:
+                    <br>
+                    &nbsp; <li>Express för att skapa servern och ansluta till en relationsdatabas för att lagra
+                        kursinformation.</li>
+                    &nbsp; <li>CORS för att tillåta Fetch API från andra domäner.</li>
+                    &nbsp; <li>MySQL som relationsdatabas, andra relationsdatabaser som till exempel SQLite
+                        eller MariaDB fungerade också bra.</li>
+                    &nbsp; <li>phpMyAdmin som ett gränssnitt för att underlätta databashantering under utvecklingsfasen.
+                        Detta körs med hjälp av Xampp.</li>
+                    &nbsp; <li>Nodemon för att underlätta port-hantering och uppdatering av applikationen under
+                        utvecklingsfasen.</li>
+                    &nbsp; <li>Dotenv för att hantera .env-filer och deras globala variabler.</li>
+
+                </p>
+                <br><br>
+                <h2>3. Slutsats</h2>
+                <p>
+                    Jag tycker att kunna bygga en fullständlig applikation (det så kallade fullstack applikation) från
+                    databasen till API:et till frontenden samt att kunna konsumera webbtjänsten som man byggde är mycket
+                    fördelaktigt och ger full kontroll över nästan allting i webbapplikationen. Man kan se hur kraftfull
+                    webbapplikationen är och utvecklingsmöjligheterna blir oändliga. Det öppnar dörren till en hel ny
+                    värld inom IT där man kan bygga moderna applikationer och ha kontroll över sin data. Detta är en väldigt kraftfull verktyg som stödjer webbutvecklaren med sitt jobb och löser många affärsbehov. 
+                    <br><br>
+                    Det finns många fördelar med detta som till exempel:
+
+                    <br>
+                    &nbsp; <li>Full kontroll över applikationen och datahanteringen.</li>
+                    &nbsp; <li>Möjlighet att anpassa webbapplikationen som man vill genom att strukturera API:et som man
+                        vill.
+                    </li>
+                    &nbsp; <li>Flexibiliteten att anpassa efter olika situationer och olika behov och krav.</li>
+                    &nbsp; <li>Öppnar dörren till ett mycket lärorikt område inom webbutvecklingen.</li>
+
+
+                    <br>
+                    Det finns dock några nackdelar med detta:
+                    <br>
+                    &nbsp; <li>Att bygga ett eget API och själv bestämma reglerna är mycket mer komplext än att använda
+                        och
+                        konsumera ett färdigt webbtjänst; det kräver dessutom mycket mer tid.</li>
+                    &nbsp; <li>Större chans att webbapplikationen kraschar och ingenting renderas för användaren.</li>
+                    &nbsp; <li>Felmeddelanden hanteras inte själva utan man måste vara noggrann med att ge rätt
+                        felmeddelande,
+                        och detta kräver bra analysförmåga för att kunna beskriva till användaren vad som har hänt vid
+                        fel.</li>
+
+
+                </p>
+                </p>
 
             </div>
             <br><br>
