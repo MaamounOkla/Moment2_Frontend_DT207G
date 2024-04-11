@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/580c2ac5ba.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+    <title>Lägg till jobb</title>
+</head>
+
+<body>
+    <nav>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="add.html">Lägg till jobb</a></li>
+            <li><a href="about.html">Info om uppgiften</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Lägg till arbete</h1>
+        <form id="expForm">
+            <label for="companyname">Företagsnamn:</label><br>
+            <input type="text" id="companyname" name="companyname" required><br>
+
+            <label for="jobtitle"> Titel:</label><br>
+            <input type="text" id="jobtitle" name="jobtitle" required><br>
+
+            <label for="location">Stad:</label><br>
+            <input type="text" id="location" name="location" required><br>
+
+            <label for="startdate">Startdatum:</label><br>
+            <input type="date" id="startdate" name="startdate" required><br>
+
+            <label for="enddate">Slutdatum:</label><br>
+            <input type="date" id="enddate" name="enddate"><br>
+
+            <label for="description">Beskrivning:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+
+            <input type="submit" value="Lägg till">
+        </form>
+    </main>
+
+</body>
+
+</html>

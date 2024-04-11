@@ -1,0 +1,284 @@
+/* //Global Stil */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: #fff;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  nav {
+    min-height: 10vh;
+  
+    width: 100%;
+    padding: 2rem;
+  
+    background: linear-gradient(
+      rgb(48, 48, 48) 13%,
+      rgb(30, 30, 30) 40%,
+      #0c0d11 86%
+    );
+    color: rgba(255, 255, 255, 0.6);
+  
+    cursor: pointer;
+    box-shadow: 1px 2px 4px rgb(20, 20, 20), 0 4px 12px rgb(10, 10, 10);
+  }
+  nav ul {
+    display: flex;
+    width: fit-content;
+    list-style: none;
+    gap: gap 2rem;
+  }
+  nav li {
+    margin: 1rem;
+  }
+  nav a {
+    background: #ffde08;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: #000;
+    transition: 300ms ease-in-out;
+  }
+  nav a:hover {
+    background: #a197ff;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: #ffde08;
+  }
+  main {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(60, 60, 60, 0.162);
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  /* addCourse sida*/
+  
+  .main-form {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+   
+  }
+ 
+  .main-form input[type="text"],
+  .main-form input[type="url"],   .main-form input[type="date"],
+  .main-form  textarea {
+    width: 100%;
+    height: 3rem;
+  
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset 0px 0px 5px rgba(118, 133, 247, 0.489),
+      0 4px 12px rgba(10, 10, 10, 0.084);
+     
+  }
+  .main-form  textarea {
+    height: 10em;
+  }
+  .main-form  input[type="radio"] {
+    cursor: pointer;
+  }
+  .main-form  input[type="submit"] {
+    width: 10rem;
+    padding: 1rem;
+  }
+  .main-form input[type="submit"] {
+    width: 10rem;
+    padding: 1rem;
+    background: #ffde08;
+  
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  .main-form input[type="submit"]:hover {
+    background-color: #ffe641;
+    box-shadow: 0 0 10px rgba(118, 133, 247, 0.489);
+  }
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  /* Startsida */
+  
+  article {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(147, 159, 247, 0.489);
+    padding: 2.8rem 1rem;
+    margin: 1em 0;
+    position: relative;
+  }
+  article span {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    flex: 1;
+    background: rgb(198, 201, 255);
+    padding: 0.2rem 0.7rem;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+  }
+  article  h4{
+    font-weight: lighter;
+    color: gray;
+  }
+  article div  {
+ 
+    margin: 0 1rem;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  display: flex;
+  gap: 2rem;
+  
+  }
+  article div button {
+ 
+    padding: 0.4rem 1.4rem;
+    border: none;
+    background-color: #262626;
+    color: #ffde08;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    cursor: pointer;
+  }
+  article div button:hover {
+ 
+  
+    background-color: #443232;
+    color: #ffe32d;
+ 
+  }
+  .link {
+    font-weight: bold;
+  }
+  
+  .info {
+    color: gray;
+  }
+  .remove {
+    padding: 0 1rem;
+    border-radius: 5px;
+    background: #ffde08;
+  }
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    background: #ffe641;
+  }
+  /* //about sida */
+  .logo img {
+    width: 400px;
+  }
+  .report {
+    width: 100%;
+    padding-bottom: 10rem;
+  }
+  .report ul li {
+    line-height: 4rem;
+    list-style: disc;
+    padding: 0.6rem 1rem;
+  }
+  .report ol li {
+    line-height: 4rem;
+    padding: 0.6rem 1rem;
+  }
+  .report h1 {
+    margin: 2rem 0;
+  }
+  .personal-information{ 
+    font-weight: normal;
+  }
+  
+
+  /* //Edit form */
+  
+  .edit-form{
+    position: absolute;
+     margin: auto;
+     left: -140px;
+     padding: 0.4rem;
+     z-index: 40;
+     background: lightcoral;
+
+  }
+  
+  /* Media Queries */
+  @media only screen and (max-width: 769px) {
+    body {
+      font-size: 1rem;
+    }
+    main {
+      width: 100%;
+      padding: 1rem;
+    }
+    .logo img {
+      width: 200px;
+    }
+    nav ul {
+      display: none;
+    }
+  
+    .burger {
+      display: flex;
+    }
+  
+    nav ul.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+    
+      left: 0;
+      top: 5rem;
+      background: linear-gradient(
+        #0c0d11,
+        rgb(30, 30, 30),
+        rgb(48, 48, 48)
+      );
+       z-index: 5;
+      width: 70%;
+      padding: 10px 5px;
+      color: #ffe641;
+    }
+  
+    nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+      padding: 1rem 0;
+      width: 100%;
+    }
+    nav a {
+      background: none;
+      color: #ffde08;
+      width: 100%;
+      padding: 0;
+    }
+    nav a:hover {
+      background: none;
+    }
+  }
+  
