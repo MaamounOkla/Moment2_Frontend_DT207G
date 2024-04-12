@@ -29,6 +29,8 @@ window.onload = function () {
 
     // Skapa en arbetslivserfarenhet med de insamlade uppgifterna
     createExperience(companyname, jobtitle, location, startdate, enddate, description);
+    // Rensa from-innehållet
+    formEl.reset();
   });
 
 }
