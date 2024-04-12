@@ -112,10 +112,10 @@ async function showAllJobs() {
     //Lägg till index attribut till knappen
     deleteBtn.setAttribute('data-index', job.id);
 
-    // Radera erfarenhet
+    // Radera erfarenhset
     deleteBtn.addEventListener("click", async (e) => {
       e.preventDefault();
-      
+       
       //Skapa id
       const id = parseInt(deleteBtn.getAttribute("data-index"));
       console.log(id);
