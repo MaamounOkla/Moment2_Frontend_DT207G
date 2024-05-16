@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- fontawesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">    <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/580c2ac5ba.js" crossorigin="anonymous"></script>
     <script src="main.js" defer></script>
     <title>Lägg till jobb</title>
@@ -28,25 +29,32 @@
     <main>
         <h1>Lägg till arbete</h1>
         <form id="expForm">
-            <label for="companyname">Företagsnamn:</label><br>
-            <input type="text" id="companyname" name="companyname" required><br>
+            <label for="companyname"><span id="companynameError" class="error"></span> Företagsnamn:</label>
+            
+            <input type="text" id="companyname" name="companyname" >
 
-            <label for="jobtitle"> Titel:</label><br>
-            <input type="text" id="jobtitle" name="jobtitle" required><br>
+            <label for="jobtitle"> <span id="jobtitleError" class="error"></span>   Titel:</label>
+           
+            <input type="text" id="jobtitle" name="jobtitle" >
 
-            <label for="location">Stad:</label><br>
-            <input type="text" id="location" name="location" required><br>
+            <label for="location"> <span id="locationError" class="error"></span> Stad:</label>
+           
+            <input type="text" id="location" name="location" >
 
-            <label for="startdate">Startdatum:</label><br>
-            <input type="date" id="startdate" name="startdate" required><br>
+            <label for="startdate"> <span id="startdateError" class="error"></span> Startdatum:</label>
+           
+            <input type="date" id="startdate" name="startdate" >
 
-            <label for="enddate">Slutdatum:</label><br>
-            <input type="date" id="enddate" name="enddate"><br>
+            <label for="enddate"> <span id="enddateError" class="error"></span> Slutdatum:</label>
+            
+            <input type="date" id="enddate" name="enddate">
 
-            <label for="description">Beskrivning:</label><br>
-            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
-
+            <label for="description"> <span id="descriptionError" class="error"></span> Beskrivning:</label>
+            
+            <textarea id="description" name="description" rows="4" cols="50" ></textarea>
+            
             <input type="submit" value="Lägg till">
+            <span id="formError" class="error"></span>
         </form>
     </main>
 

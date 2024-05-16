@@ -6,8 +6,9 @@
   }
   body {
     background: #fff;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.2rem;
+    font-family: "Reddit Sans", sans-serif;
+    line-height: 2.3rem;
+        font-size: 1.4rem;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;

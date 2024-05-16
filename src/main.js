@@ -10,10 +10,18 @@ window.onload = function () {
   // Responsiv nav burger
   document.querySelector('.burger').addEventListener('click', function () {
     document.querySelector('nav ul').classList.toggle('active');
-
   });
-
   // Hämta formuläret
+  submitForm();
+  
+  // Anropa getData() för att hämta data från API:et 
+  getData();
+}
+
+// Anropa funktionen för att visa alla jobb 
+showAllJobs();
+
+function submitForm() {
   const formEl = document.getElementById("expForm");
   formEl.classList.add("main-form");
   formEl.addEventListener("submit", event => {
@@ -27,19 +35,69 @@ window.onload = function () {
     const enddate = new Date(document.getElementById("enddate").value);
     const description = document.getElementById("description").value;
 
-    // Skapa en arbetslivserfarenhet med de insamlade uppgifterna
+    // Felhantering av tomma fält
+
+    const companynameError = document.getElementById("companynameError");
+    const jobtitleError = document.getElementById("jobtitleError");
+    const locationError = document.getElementById("locationError");
+    const startdateError = document.getElementById("startdateError");
+    const enddateError = document.getElementById("enddateError");
+    const descriptionError = document.getElementById("descriptionError");
+    const formError = document.getElementById("formError");
+    console.log(companyname);
+    //rensa felmeddalnde innhåll
+    companynameError.textContent = '';
+    jobtitleError.textContent = '';
+    locationError.textContent = '';
+    startdateError.textContent = '';
+    enddateError.textContent = '';
+    descriptionError.textContent = '';
+    formError.textContent = '';
+
+    //En switch för varje fall/fält
+    switch (true) {
+      case !companyname:
+        companynameError.textContent = '*';
+        
+      case !jobtitle:
+        jobtitleError.textContent = '*';
+        
+      case !location:
+        locationError.textContent = '*';
+        //kontrollera om datum är i ett validerat format för datum objekt eller isNaN() (Is Not a Number) 
+        case isNaN(startdate.getTime()): 
+        startdateError.textContent = '*';
+   
+    case isNaN(enddate.getTime()):  
+        enddateError.textContent = '*';
+       
+      case !description:
+        descriptionError.textContent = '*';
+        
+      default:
+    
+    }
+  
+    if (!companyname || !jobtitle || !location || !startdate || isNaN(startdate.getTime()) || !enddate || isNaN(enddate.getTime()) || !description) {
+      
+       formError.textContent = "fyll i alla obligatoriska fält markerade med (*) !"
+      return;
+  }else {
+      // Skapa en arbetslivserfarenhet med de insamlade uppgifterna
+  createExperience(companyname, jobtitle, location, startdate, enddate, description);
+  
+  // Rensa from-innehållet
+  formEl.reset();
+  }
+
+
+});
+    // Skapa en arbetslivserfarenhet med input uppgifterna
     createExperience(companyname, jobtitle, location, startdate, enddate, description);
     // Rensa from-innehållet
     formEl.reset();
-  });
+  }
 
-}
-
-// Anropa funktionen för att visa alla jobb 
-showAllJobs();
-
-// Anropa getData(); för att hämta data från API:et 
-getData();
 
 // Funktion getData() för att hämta befintliga jobb från API:et
 async function getData() {
@@ -64,7 +122,7 @@ async function createExperience(companyname, jobtitle, location, startdate, endd
       enddate: enddate,
       description: description
     };
- 
+
     // Skicka till API:et 
     const response = await fetch(url, {
       method: "POST",
@@ -75,7 +133,7 @@ async function createExperience(companyname, jobtitle, location, startdate, endd
     });
 
   } catch (error) {
-    console.error('Fel i experienceObj:', error);
+    console.error('Fel i att lägga till jobb i experienceObj:', error);
   }
 }
 
@@ -115,7 +173,7 @@ async function showAllJobs() {
     // Radera erfarenhset
     deleteBtn.addEventListener("click", async (e) => {
       e.preventDefault();
-       
+
       //Skapa id
       const id = parseInt(deleteBtn.getAttribute("data-index"));
       console.log(id);
@@ -138,19 +196,18 @@ async function showAllJobs() {
         //Ta bort den närmaste artikel elementet dynamiskt (då vanlig delete kräver att man laddar om sidan.)
         const article = deleteBtn.closest("article");
         jobsListDiv.removeChild(article);
-     
+
       } catch (error) {
         console.error('Error deleting resource:', error);
       }
-    
+
     });
-    
+
     buttonsDiv.appendChild(deleteBtn);
     article.appendChild(buttonsDiv);
     // Lägg till artikel-elementet i listan för jobb
     jobsListDiv.appendChild(article);
- 
+
   })
 }
 
- 
